@@ -1,0 +1,20 @@
+-------------------------------------------------
+
+NAT: Dinamikus / Statikus
+
+	Dinamikus: 
+
+access-list 1 permit <belsõ ip pl.:192.168.1.0> <wildcard mask>
+ip nat pool <name> <elsõ ip> <utolsó ip> netmask <subnet mask>
+ip nat inside source list 1 pool <name> overload
+
+show ip nat translation ---> Ellenõrzés
+
+
+	Statikus: 
+
+ip nat inside source static <privát ip> <publikus ip>
+
+Internet felöli ---> publikus / outside
+					} Minden esetben
+Hálózat felöli  ---> privát  /  inside
